@@ -58,7 +58,7 @@ public class Main {
 //       FILE SELECTOR (SI CONCLUDE DOPO LA FINE DEL PLAYER CONTROL)----------------------------------------------
         int fileSelector = -1; // LA INIZIALIZZO A -1 IN QUANTO E' UN VALORE CHE NON VERRA' UTILIZZATO
         while (fileSelector != 0) {
-            System.out.println("Now choose the number corresponding to the file");
+            System.out.println("Now choose the number corresponding to the file (from 1 to 5)");
             System.out.println("Choose 0 if u want to close the player");
             fileSelector = Integer.parseInt(myScanner.nextLine());
             int playerControl = -1; // LA INIZIALIZZO A -1 IN QUANTO E' UN VALORE CHE NON VERRA' UTILIZZATO
