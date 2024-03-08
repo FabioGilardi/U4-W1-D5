@@ -3,50 +3,16 @@ import entities.Image;
 import entities.MultimedialContent;
 import entities.Video;
 
+import java.time.Year;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        System.out.println("Prova audio");
-//        Audio audio1 = new Audio("Prayer of the refugee", 1);
-//        audio1.play();
-//        audio1.turnUpVolume();
-//        audio1.play();
-
-//        System.out.println("Prova immagine");
-//        Image image1 = new Image("Bobby");
-//        image1.turnUpBrightness();
-//        image1.show();
-
-//        System.out.println("Prova video");
-//        Video video1 = new Video("Prova", 1);
-//        video1.turnUpBrightness();
-//        video1.lowerVolume();
-//        video1.play();
-
-//        System.out.println("Prova array");
-//        Audio audio1 = new Audio("Prayer of the refugee", 1);
-//        Audio audio2 = new Audio("Californication", 1);
-//        Image image1 = new Image("Gimmy");
-//        Image image2 = new Image("Bobby");
-//        Video video1 = new Video("Video 1", 1);
-//
-//        MultimedialContent[] array = {audio1, audio2, image1, image2, video1};
-//        for (int i = 0; i < array.length; i++) {
-//            if (array[i] instanceof Audio) {
-//                ((Audio) array[i]).play();
-//            }
-//            if (array[i] instanceof Image) {
-//                ((Image) array[i]).show();
-//            }
-//            if (array[i] instanceof Video) {
-//                ((Video) array[i]).play();
-//            }
-//        }
         System.out.println("-----MULTIMEDIAL PLAYER-----");
         System.out.println("Now you should add 5 multimedial content at your choice");
         Scanner myScanner = new Scanner(System.in);
         MultimedialContent[] multimedialContents = new MultimedialContent[5];
+//        FILE CREATOR ----------------------------------------------------------
         for (int i = 0; i < multimedialContents.length; i++) {
             System.out.println("Type:");
             System.out.println("1 if you want an Audio");
@@ -88,7 +54,129 @@ public class Main {
                 }
             }
         }
-   
+        System.out.println("Your file are ready to be executed");
+//       FILE SELECTOR --------------------------------------------------------------------------
+        int fileSelector = -1; // LA INIZIALIZZO A -1 IN QUANTO E' UN VALORE CHE NON VERRA' UTILIZZATO
+        while (fileSelector != 0) {
+            System.out.println("Now choose the number corresponding to the file");
+            System.out.println("Choose 0 if u want to close the player");
+            fileSelector = Integer.parseInt(myScanner.nextLine());
+            int playerControl = -1; // LA INIZIALIZZO A -1 IN QUANTO E' UN VALORE CHE NON VERRA' UTILIZZATO
+//      PLAYER CONTROL ---------------------------------------------------------------------------
+            if (fileSelector > 0 && fileSelector <= 5) {
+                while (playerControl != 0) {
+                    if (multimedialContents[fileSelector - 1] instanceof Audio) {
+                        System.out.println("Type:");
+                        System.out.println("1 to turn up the volume");
+                        System.out.println("2 to lower the volume");
+                        System.out.println("3 to play the Audio");
+                        System.out.println("0 to return back to file selection");
+                        playerControl = Integer.parseInt(myScanner.nextLine());
+                        switch (playerControl) {
+                            case 1: {
+                                ((Audio) multimedialContents[fileSelector - 1]).turnUpVolume();
+                                System.out.println("Volume increased");
+                                break;
+                            }
+                            case 2: {
+                                ((Audio) multimedialContents[fileSelector - 1]).lowerVolume();
+                                System.out.println("Volume lowered");
+                                break;
+                            }
+                            case 3: {
+                                ((Audio) multimedialContents[fileSelector - 1]).play();
+                                break;
+                            }
+                            case 0: {
+                                System.out.println("File closed correctly");
+                                break;
+                            }
+                            default: {
+                                System.out.println("Check if you have written the option correctly");
+                            }
+                        }
+                    }
+                    if (multimedialContents[fileSelector - 1] instanceof Image) {
+                        System.out.println("Type:");
+                        System.out.println("1 to turn up the brightness");
+                        System.out.println("2 to lower the brightness");
+                        System.out.println("3 to show the Image");
+                        System.out.println("0 to return back to file selection");
+                        playerControl = Integer.parseInt(myScanner.nextLine());
+                        switch (playerControl) {
+                            case 1: {
+                                ((Image) multimedialContents[fileSelector - 1]).turnUpBrightness();
+                                System.out.println("Brightness increased");
+                                break;
+                            }
+                            case 2: {
+                                ((Image) multimedialContents[fileSelector - 1]).lowerBrightness();
+                                System.out.println("Brightness lowered");
+                                break;
+                            }
+                            case 3: {
+                                ((Image) multimedialContents[fileSelector - 1]).show();
+                                break;
+                            }
+                            case 0: {
+                                System.out.println("File closed correctly");
+                                break;
+                            }
+                            default: {
+                                System.out.println("Check if you have written the option correctly");
+                            }
+                        }
+                    }
+                    if (multimedialContents[fileSelector - 1] instanceof Video) {
+                        System.out.println("Type:");
+                        System.out.println("1 to turn up the brightness");
+                        System.out.println("2 to lower the brightness");
+                        System.out.println("3 to turn up the volume");
+                        System.out.println("4 to lower the volume");
+                        System.out.println("5 to play the Video");
+                        System.out.println("0 to return back to file selection");
+                        playerControl = Integer.parseInt(myScanner.nextLine());
+                        switch (playerControl) {
+                            case 1: {
+                                ((Video) multimedialContents[fileSelector - 1]).turnUpBrightness();
+                                System.out.println("Brightness increased");
+                                break;
+                            }
+                            case 2: {
+                                ((Video) multimedialContents[fileSelector - 1]).lowerBrightness();
+                                System.out.println("Brightness lowered");
+                                break;
+                            }
+                            case 3: {
+                                ((Video) multimedialContents[fileSelector - 1]).turnUpVolume();
+                                System.out.println("Volume increased");
+                            }
+                            case 4: {
+                                ((Video) multimedialContents[fileSelector - 1]).lowerVolume();
+                                System.out.println("Volume lowered");
+                            }
+                            case 5: {
+                                ((Video) multimedialContents[fileSelector - 1]).play();
+                                break;
+                            }
+                            case 0: {
+                                System.out.println("File closed correctly");
+                                break;
+                            }
+                            default: {
+                                System.out.println("Check if you have written the option correctly");
+                            }
+                        }
+                    }
+                }
+            } else if (fileSelector != 0) {
+                System.out.println("There is no file corresponding to this number");
+            }
+        }
+
+        System.out.println("Programme is shutting down...");
+        System.out.println("Created by @Fabio Gilardi " + Year.now().getValue()); // IN MODO CHE RITORNI SEMPRE L'ANNO CORRENTE
+
         myScanner.close();
     }
 }
