@@ -9,4 +9,5 @@ public interface AudioVideo {
 
     void printVolume();
 
+    void setVolume(int volume);
 }
