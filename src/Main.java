@@ -55,7 +55,7 @@ public class Main {
             }
         }
         System.out.println("Your file are ready to be executed");
-//       FILE SELECTOR --------------------------------------------------------------------------
+//       FILE SELECTOR (SI CONCLUDE DOPO LA FINE DEL PLAYER CONTROL)----------------------------------------------
         int fileSelector = -1; // LA INIZIALIZZO A -1 IN QUANTO E' UN VALORE CHE NON VERRA' UTILIZZATO
         while (fileSelector != 0) {
             System.out.println("Now choose the number corresponding to the file");
@@ -65,6 +65,7 @@ public class Main {
 //      PLAYER CONTROL ---------------------------------------------------------------------------
             if (fileSelector > 0 && fileSelector <= 5) {
                 while (playerControl != 0) {
+//                    CON QUESTO IF VERIFICO LA CLASSE DEL FILE E IN BASE A QUELLA PROPONGO LE SCELTE CONSONE ALL'UTENTE
                     if (multimedialContents[fileSelector - 1] instanceof Audio) {
                         System.out.println("Type:");
                         System.out.println("1 to turn up the volume");
