@@ -2,7 +2,7 @@
 
 //import entities.Image;
 
-//import entities.Video;
+import entities.Video;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,10 +18,10 @@ public class Main {
 //        image1.turnUpBrightness();
 //        image1.show();
 
-//        System.out.println("Prova video");
-//        Video video1 = new Video("Prova", 5);
-//        video1.turnUpBrightness();
-//        video1.lowerVolume();
-//        video1.play();
+        System.out.println("Prova video");
+        Video video1 = new Video("Prova", 1);
+        video1.turnUpBrightness();
+        video1.lowerVolume();
+        video1.play();
     }
 }

@@ -12,7 +12,7 @@ public class Video extends MultimedialContent implements ImageVideo, AudioVideo 
     //    CONSTRUCTORS
     public Video(String title, int duration) {
         super(title);
-        this.duration = duration;
+        setDuration(duration);
     }
 
 
@@ -27,6 +27,14 @@ public class Video extends MultimedialContent implements ImageVideo, AudioVideo 
             }
             printVolume();
             printBrightness();
+        }
+    }
+
+    public void setDuration(int duration) {
+        if (duration <= 0) {
+            System.err.println("La durata deve essere maggiore di 0");
+        } else {
+            this.duration = duration;
         }
     }
 
