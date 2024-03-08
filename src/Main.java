@@ -50,7 +50,7 @@ public class Main {
                 }
                 default: {
                     System.out.println("Check if you have written the option correctly");
-                    i -= 1;
+                    i -= 1; // PERCHE' DEVO FAR SI CHE L'UTENTE CREI ESATTAMENTE 5 ELEMENTI
                 }
             }
         }
