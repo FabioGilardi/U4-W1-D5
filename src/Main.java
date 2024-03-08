@@ -151,10 +151,12 @@ public class Main {
                             case 3: {
                                 ((Video) multimedialContents[fileSelector - 1]).turnUpVolume();
                                 System.out.println("Volume increased");
+                                break;
                             }
                             case 4: {
                                 ((Video) multimedialContents[fileSelector - 1]).lowerVolume();
                                 System.out.println("Volume lowered");
+                                break;
                             }
                             case 5: {
                                 ((Video) multimedialContents[fileSelector - 1]).play();
