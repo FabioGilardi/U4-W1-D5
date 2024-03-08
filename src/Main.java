@@ -2,6 +2,8 @@
 
 //import entities.Image;
 
+//import entities.Video;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("-----MULTIMEDIAL PLAYER-----");
@@ -15,5 +17,11 @@ public class Main {
 //        Image image1 = new Image("Bobby");
 //        image1.turnUpBrightness();
 //        image1.show();
+
+//        System.out.println("Prova video");
+//        Video video1 = new Video("Prova", 5);
+//        video1.turnUpBrightness();
+//        video1.lowerVolume();
+//        video1.play();
     }
 }

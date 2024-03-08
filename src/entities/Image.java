@@ -12,6 +12,13 @@ public class Image extends MultimedialContent implements ImageVideo {
     }
 
     //    METHODS
+    public void show() {
+        if (this.brightness >= 0 && this.brightness <= 10) {
+            System.out.println(this.title);
+            printBrightness();
+        }
+    }
+
     public void setBrightness(int brightness) {
         if (brightness < 0) {
             System.err.println("You can't reduce the brightness below 0");
@@ -24,12 +31,6 @@ public class Image extends MultimedialContent implements ImageVideo {
         }
     }
 
-    public void show() {
-        if (this.brightness >= 0 && this.brightness <= 10) {
-            System.out.println(this.title);
-            printBrightness();
-        }
-    }
 
     @Override
     public void turnUpBrightness() {
